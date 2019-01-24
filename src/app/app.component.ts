@@ -6,6 +6,7 @@ import { Keg } from './models/Keg';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   ngOnInit() {
     document.body.classList.add('backgroundImage');
@@ -20,8 +21,33 @@ export class AppComponent {
     let newKeg = new Keg(name, brand, pint, keg, abv);
     this.kegList.push(newKeg);
   }
+  editForm: boolean = false;
+  selectedBrew = null;
+
+  editKeg(keg) {
+    console.log(keg);
+    this.editForm = !this.editForm;
+    this.selectedBrew = keg;
+  }
   showForm: boolean = false;
   addClicked() {
     this.showForm = !this.showForm;
   }
+
+
+  // edit(clickedBrew) {
+  //   this.selectedBrew = clickedBrew;
+  // }
+  doneEditing() {
+    this.editForm = false;
+  }
+
+
+
+  almostOut(keg) {
+    if (keg.capacity <= 10) {
+      return "almostOutIndicator";
+    }
+  }
 }
+

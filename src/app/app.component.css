@@ -7,3 +7,9 @@
 .addKegbtn {
     float: right;
 }
+.almostOutIndicator {
+    color: red;
+}
+.editButton {
+    font-size: 10px;
+}
