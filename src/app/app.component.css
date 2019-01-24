@@ -1,0 +1,9 @@
+.addKeg {
+    margin-top: 200px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+.addKegbtn {
+    float: right;
+}

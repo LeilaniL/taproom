@@ -5,21 +5,48 @@
   </h1>
 </div>
 <h2>Here are some of our kegs: </h2>
-<ul>
-  <li *ngFor="let keg of kegList">
-    {{ keg.name }} <b>${{ keg.price }}</b>
-  </li>
-</ul>
-<div class="addKeg">
-  <label>Name of Brew:</label>
-  <input type="text"[(ngModel)]="name">
-  <label>Brand:</label>
-  <input type="text"[(ngModel)]="brand">
-  <label>Price per pint:</label>
-  <input type="number"[(ngModel)]="pint">
-  <label>Price per keg:</label>
-  <input type="number"[(ngModel)]="keg">
-  <label>Alcohol content:</label>
-  <input type="number"[(ngModel)]="abv">
-  <button (click)="createKeg(name, brand, pint, keg, abv)">Add Keg</button>
+<table style="width:100%">
+  <tr>
+    <th>Brew</th>
+    <th>Brand</th>
+    <th>Price per Pint</th>
+    <th>Price per Keg</th>
+    <th>Alcohol Content</th>
+    <th>Current Capacity</th>
+  </tr>
+  <tr *ngFor="let keg of kegList">
+    <td>{{ keg.name }}</td>
+    <td>{{ keg.brand }}</td>
+    <td>${{ keg.pintPrice }}</td>
+    <td>${{ keg.kegPrice }}</td>
+    <td>ABV: {{ keg.abv }}% </td>
+    <td>{{ keg.capacity }} pints</td>
+  </tr>
+</table>
+<button (click)="addClicked()">Add New Keg</button>
+<div class="addKeg" *ngIf="showForm">
+  <table>
+    <tr>
+      <td>
+        <label>Name of Brew:</label>
+        <input type="text" [(ngModel)]="name">
+      </td>
+      <td>
+        <label>Brand:</label>
+        <input type="text" [(ngModel)]="brand">
+      </td>
+      <td>
+        <label>Price per pint:</label>
+        <input type="number" [(ngModel)]="pint">
+      </td>
+      <td>
+        <label>Price per keg:</label>
+        <input type="number" [(ngModel)]="keg"></td>
+      <td> <label>Alcohol content:</label>
+        <input type="number" [(ngModel)]="abv">
+      </td>
+    </tr>
+  </table>
+  <button class="addKegbtn" (click)="createKeg(name, brand, pint, keg, abv)">Add Keg</button>
+
 </div>
