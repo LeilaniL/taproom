@@ -25,7 +25,6 @@ export class AppComponent {
   selectedBrew = null;
 
   editKeg(keg) {
-    console.log(keg);
     this.editForm = !this.editForm;
     this.selectedBrew = keg;
   }
@@ -33,11 +32,15 @@ export class AppComponent {
   addClicked() {
     this.showForm = !this.showForm;
   }
-
-
-  // edit(clickedBrew) {
-  //   this.selectedBrew = clickedBrew;
-  // }
+  pourPint(keg) {
+    keg.capacity -= 1;
+  }
+  emptyKeg(keg) {
+    keg.capacity = 0;
+  }
+  refillKeg(keg) {
+    keg.capacity = 124;
+  }
   doneEditing() {
     this.editForm = false;
   }
@@ -49,5 +52,22 @@ export class AppComponent {
       return "almostOutIndicator";
     }
   }
+  pintPrice(keg) {
+    if (keg.pintPrice <= 3) {
+      return "lowpintPrice"
+    } else if (keg.pintPrice <= 8) {
+      return "mediumpintPrice"
+    } else if (keg.pintPrice <= 12) {
+      return "highpintPrice"
+    }
+  }
+  kegPrice(keg) {
+    if (keg.kegPrice <= 40)
+      return "kegPrice"
+  }
+  alcoholContent(keg) {
+    if (keg.abv <= 20) {
+      return "abv"
+    }
+  }
 }
-

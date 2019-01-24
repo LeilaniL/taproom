@@ -20,10 +20,11 @@
     </td>
     <td>{{ keg.name }}</td>
     <td>{{ keg.brand }}</td>
-    <td>${{ keg.pintPrice }}</td>
-    <td>${{ keg.kegPrice }}</td>
-    <td>ABV: {{ keg.abv }}% </td>
+    <td [class]="pintPrice(keg)">${{ keg.pintPrice }}</td>
+    <td [class]="kegPrice(keg)">${{ keg.kegPrice }}</td>
+    <td [class]="alcoholContent(keg)">ABV: {{ keg.abv }}% </td>
     <td [class]="almostOut(keg)">{{ keg.capacity }} pints</td>
+    <td><img src="../assets/img/mugicon.png" alt="mug" (click)="pourPint(keg)"></td>
   </tr>
 </table>
 <button (click)="addClicked()">Add New Keg</button>

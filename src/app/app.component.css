@@ -13,3 +13,18 @@
 .editButton {
     font-size: 10px;
 }
+.lowpintPrice{
+    background-color: blue;
+}
+.mediumpintPrice{
+    background-color: brown;
+}
+.highpintPrice{
+    background-color: gold;
+}
+.kegPrice{
+    background-color: yellowgreen;
+}
+.abv{
+    background-color: purple;
+}
