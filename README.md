@@ -6,6 +6,13 @@ This project was created during our first week of learning Angular. We were prac
 
 Generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+## Setup Instructions
+
+- Download or clone this repository
+- Navigate to the project folder
+- In the command line, run _npm install_ 
+- In the command line, run _ng serve -o_ to view the project in a new browser window
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
